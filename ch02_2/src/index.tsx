@@ -1,0 +1,18 @@
+import ReactDOM from 'react-dom/client'
+import * as D from './data'
+
+const children = D.makeArray(10).map((notUsed, index) => (
+  <div key={index}>
+    <p>{D.randomID()}</p>
+    <p>{D.randomName()}</p>
+    <p>{D.randomJobTitle()}</p>
+    <p>{D.randomSentence()}</p>
+    <img src={D.randomAvator()} width="100" height="100" />
+  </div>
+))
+
+
+const rootVirtualDOM = <div>{children}</div>
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+root.render(rootVirtualDOM)
